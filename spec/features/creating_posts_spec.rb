@@ -1,0 +1,1 @@
+creating_posts_spec.rb
