@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'creating posts' do
-  it 'adds the posts from a form' do
+  it 'adds a text posts from a form' do
     visit '/posts'
     click_link 'New Post'
     fill_in 'Title', with: 'Frogs'
