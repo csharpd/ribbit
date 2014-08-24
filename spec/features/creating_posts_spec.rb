@@ -10,10 +10,10 @@ describe 'creating posts' do
   end
   context 'when logged in' do
     before do
-      chloe =create(:user)
+      chloe = create(:user)
       login_as chloe
     end
-    it 'adds a text posts from a form' do
+    it 'submit a posts via a form' do
       visit '/posts'
       click_link 'New Post'
       fill_in 'Title', with: 'Frogs'
@@ -24,6 +24,7 @@ describe 'creating posts' do
       expect(page).to have_content 'Frogs'
       expect(page).to have_content 'http://s.ngm.com/2006/11/tree-frogs/img/red-eyed-tree-frogs-615.jpg'
        expect(page).to have_content 'Two little frogs'
+       expect(page).to have_content ' Created by xx@xx.com'
       expect(current_path).to eq '/posts'
     end
   end

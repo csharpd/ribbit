@@ -3,7 +3,11 @@
       <h3><%= post.title %></h3>
       <h3><%= post.url %></h3>
       <h3><%= post.description %></h3>
+      <h3>Created by <%=User.find(post.user_id).email%></h3>
+      <%= link_to "Delete", post_path(post), method: :delete %>
     <% end %>
+
+
 <% else %>
   <h2>No one has posted a frog joke yet :(</h2>
 <% end %>
