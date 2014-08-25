@@ -5,6 +5,9 @@
       <h3><%= post.description %></h3>
       <h3>Created by <%=User.find(post.user_id).email%></h3>
       <%= link_to "Delete", post_path(post), method: :delete %>
+      <%= link_to "Upvote", post_upvotes_path(post), method: :post %>
+<%= link_to "Downvote", post_upvote_path(post, post.upvotes.last), method: :delete %>
+      <%= post.upvotes.count %> votes
     <% end %>
 
 
