@@ -7,7 +7,7 @@ class UpvotesController < ApplicationController
 
   def show
     @post = Post.find(params[:post_id]).upvotes.last
-
+redirect_to '/posts'
   end
 
   def destroy
